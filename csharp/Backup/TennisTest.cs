@@ -50,7 +50,7 @@ namespace Tennis
 
     [Test]
     public void checkTennisGame1() {
-      TennisGame1 game = new TennisGame1(new Player("player1"), new Player("player2"));
+      TennisGame1 game = new TennisGame1("player1", "player2");
       checkAllScores(game);
     }
 
@@ -94,7 +94,7 @@ namespace Tennis
     [Test()]
     public void CheckGame1()
     {
-        TennisGame1 game = new TennisGame1(new Player("player1"), new Player("player2"));
+      TennisGame1 game = new TennisGame1("player1", "player2");
       RealisticTennisGame(game);
     }
     [Test()]

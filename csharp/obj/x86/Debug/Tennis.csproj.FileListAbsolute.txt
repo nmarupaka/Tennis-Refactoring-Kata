@@ -1,0 +1,7 @@
+C:\NMarupaka\Github\Tennis-Refactoring-Kata\csharp\obj\x86\Debug\Tennis.csprojResolveAssemblyReference.cache
+C:\NMarupaka\Github\Tennis-Refactoring-Kata\csharp\bin\Debug\Tennis.pdb
+C:\NMarupaka\Github\Tennis-Refactoring-Kata\csharp\bin\Debug\nunit.framework.dll
+C:\NMarupaka\Github\Tennis-Refactoring-Kata\csharp\bin\Debug\nunit.framework.xml
+C:\NMarupaka\Github\Tennis-Refactoring-Kata\csharp\obj\x86\Debug\Tennis.pdb
+C:\NMarupaka\Github\Tennis-Refactoring-Kata\csharp\bin\Debug\Tennis.dll
+C:\NMarupaka\Github\Tennis-Refactoring-Kata\csharp\obj\x86\Debug\Tennis.dll
