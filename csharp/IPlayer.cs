@@ -11,9 +11,7 @@ namespace Tennis
         string Name { get; set; }
 
         //ScoredPoints of the Player
-        Points ScoredPoints { get; set; }
-
-        bool IsDeuce { get; set; }
+        Points ScoredPoints { get; set; }      
 
         //To AddPoints to the players 
         void AddPoint();

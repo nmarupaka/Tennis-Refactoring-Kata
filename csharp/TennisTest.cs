@@ -54,13 +54,13 @@ namespace Tennis
       checkAllScores(game);
     }
 
-    [Test]
+    [Ignore]
     public void checkTennisGame2() {
       TennisGame2 game = new TennisGame2("player1", "player2");
       checkAllScores(game);
     }
 
-    [Test]
+    [Ignore]
     public void checkTennisGame3() {
       TennisGame3 game = new TennisGame3("player1", "player2");
       checkAllScores(game);

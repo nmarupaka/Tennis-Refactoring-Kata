@@ -14,10 +14,13 @@ namespace Tennis
           this._player2 = player2;
       }
 
-      //
+      /// <summary>
+      /// WonPoint
+      /// </summary>
+      /// <param name="playerName"></param>
       public void WonPoint(string playerName)
       {
-          //checks which player it is
+          //checks which player it is and addpoint
           if (_player1.Name == playerName)
           {
               _player1.AddPoint();
@@ -27,8 +30,8 @@ namespace Tennis
               _player2.AddPoint();
           }
 
-          //check if player1 and players score points are same and if the scorepoints is 
-          //advantage then remove one point less from both palyers
+          //check if player1 and player2 score points are same and if the scorepoints is 
+          //advantage then remove one point less from both players as both cannot be Advantage
           if (_player1.ScoredPoints == _player2.ScoredPoints && (int)_player1.ScoredPoints == (int)Points.Advantage)
           {
               _player1.RemoveAdvantage();
@@ -36,32 +39,45 @@ namespace Tennis
           }
           else if (_player1.ScoredPoints == Points.Advantage && (int)_player2.ScoredPoints < (int)Points.Forty)
           {
-              //if player1 scorepoint 
+              // game is won by player1 to have won at least four points in total and at least two points more than the player2
               _player1.AddPoint();
           }
           else if (_player2.ScoredPoints == Points.Advantage && (int)_player1.ScoredPoints < (int)Points.Forty)
           {
+              // game is won by player2 to have won at least four points in total and at least two points more than the player1
               _player2.AddPoint();
           }
       }
 
+      /// <summary>
+      /// GetScore
+      /// </summary>
+      /// <returns></returns>
       public string GetScore()
       {
           string score;
-          if (_player1.ScoredPoints == _player2.ScoredPoints && _player1.ScoredPoints != Points.Forty)
+          if (_player1.ScoredPoints == _player2.ScoredPoints && _player1.ScoredPoints != Points.Forty && _player1.ScoredPoints != Points.Advantage)
           {
               score = string.Format("{0}-All", _player1.ScoredPoints.ToString());
           }
-          else if (_player1.ScoredPoints == _player2.ScoredPoints)
+          else if (_player1.ScoredPoints == _player2.ScoredPoints && _player1.ScoredPoints == Points.Forty)
           {
+              //at least three points have been scored by each player, and the scores are equal, the score is "Deuce".
               score = "Deuce";
           }
           else if (_player1.ScoredPoints == Points.Advantage || _player2.ScoredPoints == Points.Advantage)
           {
-              score = string.Format("Advantage for {0}", _player1.Name);
+              //three points have been scored by each side and a player has one more point than his opponent, the score of the game is "Advantage"
+              score = string.Format("Advantage {0}", (_player1.ScoredPoints == Points.Advantage) ? _player1.Name : _player2.Name);
+          }
+          else if (_player1.ScoredPoints == Points.Win || _player2.ScoredPoints == Points.Win)
+          {
+              //three points have been scored by each side and a player has one more point than his opponent, the score of the game is "Advantage"
+              score = string.Format("Win for {0}", (_player1.ScoredPoints == Points.Win) ? _player1.Name : _player2.Name);
           }
           else
           {
+              //score of each game
               score = string.Format("{0}-{1}", _player1.ScoredPoints, _player2.ScoredPoints);
           }
           return score;

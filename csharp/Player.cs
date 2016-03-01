@@ -12,14 +12,12 @@ namespace Tennis
         {
             this.Name = name;
         }
+
         //Player Name
         public string Name { get; set; }
 
         //ScoredPoints of the Player
-        public Points ScoredPoints { get; set; }
-
-        //
-        public bool IsDeuce { get; set; }
+        public Points ScoredPoints { get; set; }   
 
         //To AddPoints to the players 
         public void AddPoint()

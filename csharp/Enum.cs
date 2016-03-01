@@ -13,6 +13,6 @@ namespace Tennis
         Thirty = 2,
         Forty = 3,
         Advantage = 4,
-        Won = 5
+        Win = 5
     }
 }
