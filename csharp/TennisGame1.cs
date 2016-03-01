@@ -56,8 +56,9 @@ namespace Tennis
       public string GetScore()
       {
           string score;
-          if (_player1.ScoredPoints == _player2.ScoredPoints && _player1.ScoredPoints != Points.Forty && _player1.ScoredPoints != Points.Advantage)
+          if (_player1.ScoredPoints == _player2.ScoredPoints && _player1.ScoredPoints != Points.Forty && _player1.ScoredPoints != Points.Advantage && _player1.ScoredPoints != Points.Win)
           {
+              //to display scores if both are equal and 
               score = string.Format("{0}-All", _player1.ScoredPoints.ToString());
           }
           else if (_player1.ScoredPoints == _player2.ScoredPoints && _player1.ScoredPoints == Points.Forty)
@@ -72,7 +73,7 @@ namespace Tennis
           }
           else if (_player1.ScoredPoints == Points.Win || _player2.ScoredPoints == Points.Win)
           {
-              //three points have been scored by each side and a player has one more point than his opponent, the score of the game is "Advantage"
+              // the score of the game is "Win"
               score = string.Format("Win for {0}", (_player1.ScoredPoints == Points.Win) ? _player1.Name : _player2.Name);
           }
           else
